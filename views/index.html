@@ -114,26 +114,11 @@
      <div class="row">
 
        <div class="col-sm-4 wow fadeInDown text-center">
-         <a class="lul"><img class="rotate" src="img/icon/map.svg" alt="Generic placeholder image"></a>
+         <a href="#found_it" class="locate" style="cursor: pointer;"><img class="rotate" src="img/icon/map.svg" alt="Generic placeholder image"></a>
          <h3>¡Hey! ¿Qué esperas?</h3>
          <p class="lead">Bueno, no haz pinchado aun en el mapa por miedo quizá y bueno es normal, yo no lo haría.</p>
 
        </div><!-- /.col-lg-4 -->
-
-
-
-       <!--
-       <div class="col-sm-4 wow fadeInDown text-center">
-         <img  class="rotate" src="img/icon/search.svg" alt="Generic placeholder image">
-          <h3>¡Ja! Te he encontrado</h3>
-        <p class="lead">Dejame decirte que estas en {var direction} </p><!--AQÚ DIRECCIÓN
-
-        <p class="lead">Eso ha sido verdaderamente fácil, es como jugar LoL</p>
-
-
-        Aquí se puede desplegar el mapa para que la persona no piense que es timada o algo asi... un adelanto
-        <p><a class="btn btn-embossed btn-primary view" role="button">Muestrame</a></p>
-       </div> /.col-lg-4 -->
 
      </div><!-- /.row -->
    </div>
@@ -149,22 +134,11 @@
        <div class="col-sm-4 wow fadeInDown text-center">
          <img  class="rotate" src="img/icon/search.svg" alt="Generic placeholder image">
           <h3>¡Ja! Te he encontrado</h3>
-        <p class="lead">Estas en {var direction} </p><!--AQÚ DIRECCIÓN -->
-
-        <p>
-          <input type="checkbox" id="azul_blanco" value="azul_blanco">Azul Blanco
-        </p>
-
-        <p>
-          <input type="checkbox" id="altisa" value="altisa">Altisa
-        </p>
-
-        <p>
-          <input type="checkbox" id="calafias_rojas" value="calafias_rojas">Calafias Rojas
-        </p>
+        <p class="lead">Estas en :</p><!--AQÚ DIRECCIÓN -->
+        <p class="address">  </p>
 
         <!--Aquí se puede desplegar el mapa para que la persona no piense que es timada o algo asi... un adelanto-->
-        <p><a class="btn btn-embossed btn-primary view" role="button">Muestrame</a></p>
+        <p><a href="#useit" class="btn btn-embossed btn-primary view" role="button">Desplegar rutas!</a></p>
        </div><!-- /.col-lg-4 -->
 
      </div><!-- /.row -->
@@ -172,15 +146,22 @@
  </div>
 
 
- <div id="useit" class="content-section-b" style="border-top: 0">
+ <div id="useit" class="content-section-b" style="border-top: 0; padding: 70px 0;">
    <div class="container">
-
-
-
      <div class="row">
-<div id="map_container" style="height: 800px;"></div>
-       <div class="col-sm-4 wow fadeInDown text-center">
 
+       <div class="col-sm-4 wow fadeInDown text-center">
+         <div id="map_container" style="height: 515px;"></div>
+
+         <form class="form-inline">
+<div class="form-group">
+
+<label style="padding:8px;"><input type="checkbox" id="altisa" value="altisa">Altisa</label>
+<label style="padding:8px;"><input type="checkbox" id="calafias_rojas" value="calafias_rojas">Calafias Rojas</label>
+<label style="padding:8px;"><input type="checkbox" id="azul_blanco" value="azul_blanco">Azul Blanco</label>
+
+
+</form>
 
 
 
@@ -193,6 +174,7 @@
      </div><!-- /.row -->
    </div>
  </div>
+  </div>
 
 
 
