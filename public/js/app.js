@@ -2,12 +2,14 @@ var map;
 
 var geocoder = new google.maps.Geocoder;
 
-var routes = ['altisa','azul_blanco','calafias_rojas'];
+var routes = ['altisa','azul_blanco','calafias_rojas','camiones_untima','verde_crema'];
 
 var kml_files = {
                 'altisa': 'https://www.dropbox.com/s/hrmlxg6tppnzo3e/altisa.kml?dl=1',
                 'azul_blanco': 'https://www.dropbox.com/s/gzsdfl29czuvw93/azul_blanco.kml?dl=1',
-                'calafias_rojas': 'https://www.dropbox.com/s/4t7k0elxqh0oi8h/calafias_rojas.kml?dl=1'
+                'calafias_rojas': 'https://www.dropbox.com/s/4t7k0elxqh0oi8h/calafias_rojas.kml?dl=1',
+                'camiones_untima' : 'https://www.dropbox.com/s/nvhh5ps8xvfxx4h/camiones_untima.kml?dl=1',
+                'verde_crema' : 'https://www.dropbox.com/s/z67n2pnkua9n39p/verde_crema.kml?dl=1',
               };
 
 var layers=[];
