@@ -1,2 +1,4 @@
 # transportec
-tijuanas transport
+
+
+Presentación para Topicos Avanzados por Román Tercero Gómez.
