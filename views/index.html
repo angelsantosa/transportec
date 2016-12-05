@@ -110,19 +110,15 @@
      <div class="col-md-6 col-md-offset-3 text-center wrap_title">
        <h2>¿Estas perdido?</h2>
        <p class="lead" style="margin-top:0">Pincha aquí abajo...</p>
-
      </div>
 
      <div class="row">
 
        <div class="col-sm-4 wow fadeInDown text-center">
-         <img class="rotate" src="img/icon/map.svg" alt="Generic placeholder image">
-         <h3><br>¡Hey! ¿Qué esperas?</h3>
-         <p class="lead"><br>Bueno, no haz pinchado aun en el mapa por miedo quizá y bueno es normal, yo no lo haría pero deja te explico que sucedera al
-           momento de pinchar: solo usaré tecnologia super avanzada para localizarte (que no te explicaré porqué deseguro juegas LoL) solo te pido de
-           favor que actives la ubicación en tu dispositivo para facilitar este viaje. </p>
+         <a class="lul"><img class="rotate" src="img/icon/map.svg" alt="Generic placeholder image"></a>
+         <h3>¡Hey! ¿Qué esperas?</h3>
+         <p class="lead">Bueno, no haz pinchado aun en el mapa por miedo quizá y bueno es normal, yo no lo haría.</p>
 
-         <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
        </div><!-- /.col-lg-4 -->
 
 
@@ -131,7 +127,7 @@
        <div class="col-sm-4 wow fadeInDown text-center">
          <img  class="rotate" src="img/icon/search.svg" alt="Generic placeholder image">
           <h3>¡Ja! Te he encontrado</h3>
-        <p class="lead">Dejame decirte que estas en  </p><!--AQÚ DIRECCIÓN -->
+        <p class="lead">Dejame decirte que estas en {var direction} </p><!--AQÚ DIRECCIÓN -->
 
         <p class="lead">Eso ha sido verdaderamente fácil, una vez tuve que buscar un nub y tambien fue fácil... ¡Hola santosa</p>
         <p class="lead">Eso ha sido verdaderamente fácil, es como jugar LoL</p>
@@ -145,36 +141,56 @@
    </div>
  </div>
 
- <div id="useit" class="content-section-b" style="border-top: 0">
+
+ <div id="found_it" class="content-section-b" style="border-top: 0">
    <div class="container">
 
-     <div class="col-md-6 col-md-offset-3 text-center wrap_title">
-       <h2>Transporte</h2>
-       <p class="lead" style="margin-top:0">De momento no tenemos bicis en el itinerario</p>
-
-     </div>
 
      <div class="row">
 
        <div class="col-sm-4 wow fadeInDown text-center">
-         <img class="rotate" src="img/icon/bicycle.svg" alt="Generic placeholder image">
-         <h3>Hora de elegir</h3>
-         <p class="lead">Ten a la mano tu credencial de estudiante.</p>
+         <img  class="rotate" src="img/icon/search.svg" alt="Generic placeholder image">
+          <h3>¡Ja! Te he encontrado</h3>
+        <p class="lead">Estas en {var direction} </p><!--AQÚ DIRECCIÓN -->
 
-         <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+        <p>
+          <input type="checkbox" id="azul_blanco" value="azul_blanco">Azul Blanco
+        </p>
+
+        <p>
+          <input type="checkbox" id="altisa" value="altisa">Altisa
+        </p>
+
+        <p>
+          <input type="checkbox" id="calafias_rojas" value="calafias_rojas">Calafias Rojas
+        </p>
+
+        <!--Aquí se puede desplegar el mapa para que la persona no piense que es timada o algo asi... un adelanto-->
+        <p><a class="btn btn-embossed btn-primary view" role="button">Muestrame</a></p>
        </div><!-- /.col-lg-4 -->
 
+     </div><!-- /.row -->
+   </div>
+ </div>
+
+
+ <div id="useit" class="content-section-b" style="border-top: 0">
+   <div class="container">
 
 
 
+     <div class="row">
+<div id="map_container" style="height: 800px;"></div>
        <div class="col-sm-4 wow fadeInDown text-center">
-         <img  class="rotate" src="img/icon/airplane.svg" alt="Generic placeholder image">
-          <h3>Rutas</h3>
-        <p class="lead">aqui las rutas </p>
-        <!-- Opciones o el mapa, colores, la verda no se que pienses de esto :|-->
+
+
+
+
+
 
          <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
        </div><!-- /.col-lg-4 -->
+
 
      </div><!-- /.row -->
    </div>
@@ -439,10 +455,13 @@
    </footer>
 
    <!-- JavaScript -->
-   <script src="js/jquery-1.10.2.js"></script>
-   <script src="js/bootstrap.js"></script>
+ <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+ <script type="text/javascript" src="js/gmaps/gmaps.js"></script>
+ <script src="js/jquery-1.10.2.js"></script>
+ <script src="js/bootstrap.js"></script>
  <script src="js/owl.carousel.js"></script>
  <script src="js/script.js"></script>
+ <script src="js/app.js"></script>
  <!-- StikyMenu -->
  <script src="js/stickUp.min.js"></script>
  <script type="text/javascript">
