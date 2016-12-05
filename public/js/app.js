@@ -1,5 +1,7 @@
 var map;
 
+var geocoder = new google.maps.Geocoder;
+
 var routes = ['altisa','azul_blanco','calafias_rojas'];
 
 var kml_files = {
@@ -36,10 +38,54 @@ map = new GMaps({
 });
 
 routes.forEach(function (e) {
-  //create_layers(e);
   $("#"+e).change(function () {
     checkbox_switch(this, e);
   });
 })
 
+$('.locate').click(function () {
+  GMaps.geolocate({
+          success: function(position) {
+            var lati = position.coords.latitude;
+            var lngi = position.coords.longitude;
+            var latlng = {lat: lati, lng: lngi};
+
+            geocoder.geocode({'location': latlng}, function(results, status) {
+              if (status === 'OK') {
+                if (results[1]) {
+                  $( ".address" ).text( results[1].formatted_address );
+
+                } else {
+                  window.alert('No results found');
+                }
+              } else {
+                window.alert('Geocoder failed due to: ' + status);
+              }
+            });
+
+            map.setCenter(lati, lngi);
+            map.setZoom(18);
+            map.addMarker({
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude,
+            });
+
+          },
+          error: function(error) {
+            alert('Geolocation failed: '+error.message);
+          },
+          not_supported: function() {
+            alert("Your browser does not support geolocation");
+          }
+      });
 });
+
+});
+
+
+function geocodeLatLng(geocoder, map, infowindow) {
+  var input = document.getElementById('latlng').value;
+  var latlngStr = input.split(',', 2);
+  var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
+
+}
